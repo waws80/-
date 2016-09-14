@@ -198,7 +198,13 @@ expandedTitleMarginStart - 设置扩张时候(还没有收缩时)title向左填�
 
 
 ----------
+* android 5.0状态栏和导航栏
+###如图：
 
+![状态栏图](https://github.com/waws80/-/blob/master/toolbarandnavigationBar.png)
+
+
+http://www.jianshu.com/collection/06bbfc49e803
 
 
 
