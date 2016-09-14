@@ -203,6 +203,40 @@ expandedTitleMarginStart - 设置扩张时候(还没有收缩时)title向左填�
 
 ![状态栏图](https://github.com/waws80/-/blob/master/toolbarandnavigationBar.png)
 
+* bottom navigation bar
+
+使用：
+#####使用Gradle构建：compile ‘com.ashokvarma.android:bottom-navigation-bar:0.9.5'
+布局使用：
+
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar  
+                android:layout_gravity="bottom"  
+                android:id="@+id/Tab"  
+                android:layout_width="match_parent"  
+                android:layout_height="wrap_content"/>
+
+
+
+     4.在Activity中实例化控件，为控件设置属性
+
+     BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
+    bottomNavigationBar .addItem(new BottomNavigationItem(R.drawable.ic_home_white_24dp,"Home")) 
+    .addItem(new BottomNavigationItem (R.drawable.ic_book_white_24dp,"Books"))
+    .addItem(new BottomNavigationItem(R.drawable.ic_music_note_white_24dp,"Music")) 
+    .addItem(new BottomNavigationItem(R.drawable.ic_tv_white_24dp,"Movies & TV")) 
+    .addItem(new BottomNavigationItem(R.drawable.ic_videogame_asset_white_24dp,"Games")) 
+    .initialise();
+
+     5.设置监听事件，监听事件有三种状态：
+     当Item被选中状态
+    当Item不被选中状态
+    当Item再次被选中状态
+    bottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener(){
+    @Override public void onTabSelected(int position) { } 
+    @Override public void onTabUnselected(int position) { } 
+    @Override public void onTabReselected(int position) { } 
+    }); 
+
 
 http://www.jianshu.com/collection/06bbfc49e803
 
