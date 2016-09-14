@@ -1,10 +1,10 @@
 #Android Material学习
 ##
 * 界面跳转动画代码：
-##
+
     startActivity(new Intent(this,SecondActivity.class), ActivityOptions.makeSceneTransitionAnimation(this).toBundle()); 
 * 文字输入提示
-##
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -16,7 +16,7 @@
             android:hint="password"/>
     </android.support.design.widget.TextInputLayout>
 * 对输入框中的内容进行校验
-##
+
     public void onClick(View v) {
              hideKeyboard();
      String username = usernameWrapper.getEditText().getText().toString();
@@ -32,7 +32,7 @@
            }
     }
 * ToolBar默认是居右，改变成居中。
-##
+
     由于toolbar有一个16dp的content inset。
     app:contentInsetStart="0dp"
     //toolbar的这个属性就是让居右为0dp完全实现让标题栏居中
@@ -49,7 +49,7 @@
 ###介绍：
 #######CoordinatorLayout使得子view之间知道了彼此的存在，一个子view的变化可以通知到另一个子view，CoordinatorLayout 所做的事情就是当成一个通信的桥梁，连接不同的view，使用 Behavior 对象进行通信。比如：在CoordinatorLayout中使用AppBarLayout，如果AppBarLayout的子View（如ToolBar、TabLayout）标记了app:layout_scrollFlags滚动事件,那么在CoordinatorLayout布局里其它标记了app:layout_behavior的子View（LinearLayout、RecyclerView、NestedScrollView等）就能够响应（如ToolBar、TabLayout）控件被标记的滚动事件。
 1. 隐藏和显示AppBar
-##
+
     <android.support.design.widget.AppBarLayout
           android:layout_width="match_parent"
          android:layout_height="wrap_content"
@@ -157,19 +157,19 @@ contentScrim - 设置当CollapsingToolbarLayout完全折叠(收缩)后的背景�
 expandedTitleMarginStart - 设置扩张时候(还没有收缩时)title向左填充的距离。
 
      layout_scrollFlags="scroll|exitUntilCollapsed"
-###
+
 2、在ImageView控件中：
 #####layout_collapseMode
 * pin - 当CollapsingToolbarLayout完全收缩后，Toolbar还可以保留在屏幕上。
 * parallax - 在内容滚动时，CollapsingToolbarLayout中的View（比如ImageView)也可以同时滚动，实现视差滚动效果，通常和layout_collapseParallaxMultiplier(设置视差因子)搭配使用。
 #####layout_collapseParallaxMultiplier(视差因子) - 设置视差滚动因子，值为：0~1。
-###
+
 3、Toolbar控件中：
 
 * layout_collapseMode(折叠模式)：为pin。
 #####监听appBarLayout
 使用OnOffsetChangedListener
-#
+
   * verticalOffset==0时，说明是展开的；
   * verticalOffset<0，开始收缩了；
   * |verticalOffset|==H(AppBarLayout-ToolBar-StatusBar)，已经完全收缩了
